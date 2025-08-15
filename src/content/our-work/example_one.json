@@ -1,0 +1,8 @@
+{
+  "slug": "example-1",
+  "hero": {
+    "title": "Example 1",
+    "sub_title": "Example one subtitle for us to play with",
+    "image": "https://res.cloudinary.com/dojwooqzh/image/upload/v1755215423/2150904760_1_iwamkz.png"
+  }
+}
