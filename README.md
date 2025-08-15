@@ -17,6 +17,8 @@ We want the images to load instantly basically. 0 Latency is important.
 In the example below I passed "f_auto,q_auto" inbetween upload and the file path.
 This tells Cloudinary to automatically choose the format and compression level for the file based on the view width.
 
+If these don't work we may need to look into using some of the tools in their GUI to compress the image sizes
+
 ```html
 <img
   src="https://res.cloudinary.com/dojwooqzh/image/upload/f_auto,q_auto/v1755215424/2150904669_2_yfdn45.png"
