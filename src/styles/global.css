@@ -1,1 +1,10 @@
+@import "@fontsource-variable/space-grotesk/index.css";
+@import "@fontsource-variable/montserrat/index.css";
 @import "tailwindcss";
+
+.font-grotesk {
+  font-family: 'Space Grotesk Variable', sans-serif;
+}
+.font-montserrat {
+  font-family: 'Montserrat Variable', sans-serif;
+}

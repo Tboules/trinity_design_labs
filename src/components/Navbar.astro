@@ -1,0 +1,185 @@
+---
+import GradientButton from "./GradientButton.astro";
+import logo_white from "../assets/logos/logo_white.svg";
+import logo_coloured from "../assets/logos/logo_coloured.svg";
+import logo_full_coloured from "../assets/logos/logo_full_coloured.svg";
+import trinity from "../assets/logos/trinity.svg";
+import x from "../assets/icons/x.svg";
+import discord from "../assets/icons/discord.svg";
+import linkedin from "../assets/icons/linkedin.svg";
+import facebook from "../assets/icons/facebook.svg";
+import twitch from "../assets/icons/twitch.svg";
+---
+
+<nav
+  class="fixed top-6 left-1/2 z-50 container w-full -translate-x-1/2 px-5 sm:px-0"
+>
+  <div class="rounded-2xl p-2 transition-colors duration-300" id="navbar">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center space-x-2">
+        <!-- <img src="/logo.svg" alt="Trinity Design Lab" class="h-8" /> -->
+        <img src=`${logo_white.src}` id="logo_white" class="w-[171px]" alt="" />
+        <img
+          src=`${logo_coloured.src}`
+          id="logo_coloured"
+          class="hidden w-[171px]"
+          alt=""
+        />
+      </a>
+
+      <div class="hidden items-center gap-10 lg:flex">
+        <!-- Desktop Menu -->
+        <ul class="flex space-x-10 font-medium text-white">
+          <li><a href="#what" class="hover:text-gray-300">WHAT WE DO</a></li>
+          <li>
+            <a href="#process" class="hover:text-gray-300">OUR PROCESS</a>
+          </li>
+          <li><a href="#work" class="hover:text-gray-300">OUR WORK</a></li>
+          <li><a href="#contact" class="hover:text-gray-300">CONTACT US</a></li>
+        </ul>
+
+        <!-- CTA Button -->
+        <GradientButton label="Let's Talk" href="#contact" />
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="menu-btn"
+        class="z-50 rounded-[10px] border border-white p-2 text-white focus:outline-none lg:hidden"
+      >
+        <svg
+          class="h-7 w-7"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<!-- Mobile Menu (slide from right) -->
+<div
+  id="mobile-menu"
+  class="fixed top-0 right-0 z-50 flex h-full w-full translate-x-full transform flex-col items-center justify-between space-y-6 bg-black text-white transition-transform duration-300 lg:hidden"
+>
+  <div class="mb-0 flex w-full justify-between px-5 pt-[30px]">
+    <img
+      src=`${logo_full_coloured.src}`
+      id="logo_full_coloured"
+      class="w-[171px]"
+      alt=""
+    />
+    <div
+      class="flex h-[46px] w-[46px] items-center justify-center rounded-[10px] border border-white p-2"
+    >
+      <button id="close-btn" class="text-white"> ✕ </button>
+    </div>
+  </div>
+  <div>
+    <ul class="flex flex-col items-center space-y-10 font-medium text-white">
+      <li>
+        <a href="#what" class="text-[22px] hover:text-gray-300">WHAT WE DO</a>
+      </li>
+      <li>
+        <a href="#process" class="text-[22px] hover:text-gray-300"
+          >OUR PROCESS</a
+        >
+      </li>
+      <li>
+        <a href="#work" class="text-[22px] hover:text-gray-300">OUR WORK</a>
+      </li>
+      <li>
+        <a href="#contact" class="text-[22px] hover:text-gray-300">CONTACT US</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="w-full">
+    <div class="flex justify-center pb-10">
+      <GradientButton label="Let's Talk" href="/contact" />
+    </div>
+    <hr class="w-full border-t border-white/20" />
+    <div class="flex w-full justify-center gap-10 py-5">
+      <a href="#"><img src=`${x.src}` alt="social media icon" /></a>
+      <a href="#"><img src=`${discord.src}` alt="social media icon" /></a>
+      <a href="#"><img src=`${linkedin.src}` alt="social media icon" /></a>
+      <a href="#"><img src=`${facebook.src}` alt="social media icon" /></a>
+      <a href="#"><img src=`${twitch.src}` alt="social media icon" /></a>
+    </div>
+    <hr class="w-full border-t border-white/20" />
+    <div class="w-full py-8">
+      <p class="text-center">© 2025 Trinity Design Lab All rights reserved</p>
+      <div class="mt-2 flex items-center justify-center space-x-4">
+        <a href="#" class="hover:underline">Terms of Use</a>
+        <span>•</span>
+        <a href="#" class="hover:underline">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <img src=`${trinity.src}` alt="trinity logo text" />
+    </div>
+  </div>
+</div>
+
+<script>
+  const navbar = document.getElementById("navbar");
+  const logo_white = document.getElementById("logo_white");
+  const logo_coloured = document.getElementById("logo_coloured");
+  const menuBtn = document.getElementById("menu-btn");
+  window.addEventListener("scroll", () => {
+    if (!navbar) return;
+    if (!logo_white) return;
+    if (!logo_coloured) return;
+    if (window.scrollY > 50) {
+      navbar.classList.add("backdrop-blur-md", "bg-white/60", "shadow-md");
+      logo_white.classList.add("hidden");
+      logo_white.classList.add("hidden");
+      logo_coloured.classList.remove("hidden");
+      navbar.classList.remove("bg-transparent");
+      navbar
+        .querySelectorAll("a")
+        .forEach((el) => el.classList.add("text-black"));
+      if (menuBtn) {
+        menuBtn.classList.add("border-black");
+        menuBtn.classList.remove("border-white");
+        menuBtn.classList.add("text-black");
+        menuBtn.classList.remove("text-white");
+      }
+    } else {
+      logo_coloured.classList.add("hidden");
+      logo_white.classList.remove("hidden");
+      navbar.classList.remove("backdrop-blur-md", "bg-white/60", "shadow-md");
+      navbar
+        .querySelectorAll("a")
+        .forEach((el) => el.classList.remove("text-black"));
+      if (menuBtn) {
+        menuBtn.classList.add("border-white");
+        menuBtn.classList.remove("border-black");
+        menuBtn.classList.add("text-white");
+        menuBtn.classList.remove("text-black");
+      }
+    }
+  });
+
+  const closeBtn = document.getElementById("close-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("translate-x-full");
+    });
+  }
+
+  if (closeBtn && mobileMenu) {
+    closeBtn.addEventListener("click", () => {
+      mobileMenu.classList.add("translate-x-full");
+    });
+  }
+</script>

@@ -1,0 +1,12 @@
+---
+const { label = "Click Me", href = "#" } = Astro.props;
+---
+
+<a
+  href={href}
+  class="inline-flex items-center px-6 py-3 text-white font-medium rounded-[12px] transition-transform duration-200 hover:scale-105 mb-0"
+  style="background: linear-gradient(105.36deg, #70CCCF 0%, #8DB73E 50.03%, #4C9D31 100.06%);"
+>
+  {label}
+  <span class="ml-2">↗</span>
+</a>

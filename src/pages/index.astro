@@ -1,25 +1,171 @@
 ---
-import "../styles/global.css";
-import Welcome from "../components/Welcome.astro";
+import NeatBackground from "../components/NeatBackground";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import card1 from "../assets/card_images/card_one.jpg";
+import card2 from "../assets/card_images/card_two.jpg";
+import card3 from "../assets/card_images/card_three.jpg";
+import card4 from "../assets/card_images/card_four.jpg";
 
 const allOurWork = await getCollection("our_work");
 ---
 
 <Layout>
-  <div class="m-4 flex gap-4">
-    {
-      allOurWork.map((col) => (
-        <div>
-          <a
-            class="hover: rounded border border-gray-400 px-8 py-4 hover:bg-gray-50"
-            href={`/our-work/${col.data.slug}`}
+  <section
+    class="relative flex min-h-screen items-center justify-center overflow-hidden text-center pb-20 lg:pb-0"
+  >
+    <!-- Animated background -->
+    <NeatBackground client:only="react" />
+
+    <!-- Gradient overlay -->
+    <div
+      class="absolute bottom-0 h-[449px] w-full bg-[linear-gradient(180deg,rgba(244,244,244,0)_30.29%,#F4F4F4_100%)]"
+    >
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 px-6">
+      <h1 class="lg:text-[83px] text-[43px] lg:leading-20 leading-[100%] font-medium mt-[155px] lg:mt-0 mb-[70px] lg:mb-0">
+        Create Your <br />
+        <span class="font-bold text-white">Digital Presence;</span>
+        <br />
+        Transform Your Business.
+      </h1>
+
+      <div class="font-montserrat mx-auto max-w-[674px]">
+        <p class="mt-15 lg:font-medium font-semibold text-white lg:text-xl text-sm">
+          Scale Your Business with Custom Software Solutions
+        </p>
+        <p class="mt-2 text-black lg:text-base text-sm">
+          At Trinity Design Labs, we deliver high-quality, custom software,
+          website design, and E-commerce solutions that drive business growth.
+          Experience exceptional performance, timely delivery, and sustained
+          support with our expert team.
+        </p>
+      </div>
+
+      <div class="lg:mt-12 mt-16 flex justify-center lg:gap-5 gap-2.5 sm:flex-row">
+        <a
+          href="#contact"
+          class="rounded-lg bg-black lg:px-10 px-5 lg:py-3 py-3 lg:text-[16px] text-[14px] font-medium text-white"
+        >
+          Book A Consultation
+        </a>
+        <a
+          href="#case"
+          class="rounded-lg border border-black bg-transparent lg:px-20 px-5 lg:py-3 py-3 lg:text-[16px] text-[14px] lg:font-semibold font-medium text-black"
+        >
+          Case Studies
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="what" class="container mx-auto px-5 sm:px-0">
+    <div class="pt-[120px]">
+      <h2 class="text-center text-6xl leading-[100%] font-medium uppercase">
+        What We Do
+      </h2>
+      <ul id="cards" class="mt-[60px] mb-[4vw] pb-[calc(4*1em)]">
+        <!-- Card 1 -->
+        <li id="card-1" class="sticky top-28 h-[500px]">
+          <div
+            class="card-content relative h-full rounded-[45px] bg-cover bg-center bg-no-repeat p-13 text-[#131212]"
+            style={`background-image: url(${card1.src});`}
           >
-            {col.data.hero.title}
-          </a>
-        </div>
-      ))
-    }
-  </div>
+            <div class="absolute inset-0 rounded-[45px] bg-black/40"></div>
+            <h2 class="mb-2.5 text-4xl font-bold">
+              Transform Your Ideas into a Digital Reality
+            </h2>
+            <p class="text-lg">
+              We specialize in custom software development, website design, and
+              E-commerce solutions tailored to meet your unique business needs.
+              Our team of experts ensures that your business doesn’t have to
+              choose between quality, speed, and support.
+            </p>
+            <a class="mt-2.5 flex items-center gap-3.5">
+              <div class="h-10 w-10 rounded-full bg-white">
+                <img src="../assets/icons/Arrow.svg" alt="" />
+              </div>
+              <div class="">Explore Our Services</div>
+            </a>
+          </div>
+        </li>
+
+        <!-- Card 2 -->
+        <li id="card-2" class="sticky top-28 -mt-[120px] h-[500px]">
+          <div
+            class="card-content relative h-full rounded-[45px] bg-cover bg-center bg-no-repeat p-13 text-[#131212]"
+            style={`background-image: url(${card2.src});`}
+          >
+            <div class="absolute inset-0 rounded-[45px] bg-black/40"></div>
+            <h2 class="mb-2.5 text-4xl font-bold">
+              Transform Your Ideas into a Digital Reality
+            </h2>
+            <p class="text-lg">
+              We specialize in custom software development, website design, and
+              E-commerce solutions tailored to meet your unique business needs.
+              Our team of experts ensures that your business doesn’t have to
+              choose between quality, speed, and support.
+            </p>
+            <a class="mt-2.5 flex items-center gap-3.5">
+              <div class="h-10 w-10 rounded-full bg-white">
+                <img src="../assets/icons/Arrow.svg" alt="" />
+              </div>
+              <div class="">Explore Our Services</div>
+            </a>
+          </div>
+        </li>
+
+        <!-- Card 3 -->
+        <li id="card-3" class="sticky top-28 -mt-[120px] h-[500px]">
+          <div
+            class="card-content relative h-full rounded-[45px] bg-cover bg-center bg-no-repeat p-13 text-[#131212]"
+            style={`background-image: url(${card3.src});`}
+          >
+            <div class="absolute inset-0 rounded-[45px] bg-black/40"></div>
+            <h2 class="mb-2.5 text-4xl font-bold">
+              Transform Your Ideas into a Digital Reality
+            </h2>
+            <p class="text-lg">
+              We specialize in custom software development, website design, and
+              E-commerce solutions tailored to meet your unique business needs.
+              Our team of experts ensures that your business doesn’t have to
+              choose between quality, speed, and support.
+            </p>
+            <a class="mt-2.5 flex items-center gap-3.5">
+              <div class="h-10 w-10 rounded-full bg-white">
+                <img src="../assets/icons/Arrow.svg" alt="" />
+              </div>
+              <div class="">Explore Our Services</div>
+            </a>
+          </div>
+        </li>
+
+        <!-- Card 4 -->
+        <li id="card-4" class="sticky top-28 -mt-[120px] h-[500px]">
+          <div
+            class="card-content relative h-full rounded-[45px] bg-cover bg-center bg-no-repeat p-13 text-[#131212]"
+            style={`background-image: url(${card4.src});`}
+          >
+            <div class="absolute inset-0 rounded-[45px] bg-black/40"></div>
+            <h2 class="mb-2.5 text-4xl font-bold">
+              Transform Your Ideas into a Digital Reality
+            </h2>
+            <p class="text-lg">
+              We specialize in custom software development, website design, and
+              E-commerce solutions tailored to meet your unique business needs.
+              Our team of experts ensures that your business doesn’t have to
+              choose between quality, speed, and support.
+            </p>
+            <a class="mt-2.5 flex items-center gap-3.5">
+              <div class="h-10 w-10 rounded-full bg-white">
+                <img src="../assets/icons/Arrow.svg" alt="" />
+              </div>
+              <div class="">Explore Our Services</div>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
 </Layout>

@@ -9,8 +9,16 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^4.3.0",
+    "@firecms/neat": "^0.4.0",
+    "@fontsource-variable/montserrat": "^5.2.6",
+    "@fontsource-variable/space-grotesk": "^5.2.8",
     "@tailwindcss/vite": "^4.1.12",
+    "@types/react": "^19.1.11",
+    "@types/react-dom": "^19.1.7",
     "astro": "^5.13.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
