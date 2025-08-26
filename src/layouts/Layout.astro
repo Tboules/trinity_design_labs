@@ -13,10 +13,15 @@ import "../styles/global.css";
     <title>Trinity Design Labs</title>
   </head>
   <body>
-    <div class="flex items-center justify-between p-4">
-      <ColorLogo width="140" />
-      <div>nav links</div>
-    </div>
+    <nav class="flex items-center justify-between p-4">
+      <a href="/">
+        <ColorLogo width="140" />
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="/our-work/example-1">example 1</a>
+        <a href="/our-work/example-2">example 2</a>
+      </div>
+    </nav>
     <slot />
   </body>
 </html>
