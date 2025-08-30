@@ -3,8 +3,29 @@
 @import "tailwindcss";
 
 .font-grotesk {
-  font-family: 'Space Grotesk Variable', sans-serif;
+  font-family: "Space Grotesk Variable", sans-serif;
 }
 .font-montserrat {
-  font-family: 'Montserrat Variable', sans-serif;
+  font-family: "Montserrat Variable", sans-serif;
+}
+
+.active-card .card-content {
+  color: white !important;
+  border: none !important;
+}
+
+.active-card .card-content h2 {
+  color: white !important;
+}
+
+.active-card .card-content .overlay {
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+
+.active-card .card-content .arrow-wrapper {
+  background: white !important;
+}
+
+.active-card .card-content .arrow-wrapper img {
+  content: url("../assets//icons/Arrow_black.svg");
 }
