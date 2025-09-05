@@ -1,14 +1,6 @@
 ---
+import getImage from "../utils/cloudinary";
 import GradientButton from "./GradientButton.astro";
-import logo_white from "../assets/logos/logo_white.svg";
-import logo_coloured from "../assets/logos/logo_coloured.svg";
-import logo_full_coloured from "../assets/logos/logo_full_coloured.svg";
-import trinity from "../assets/logos/trinity.svg";
-import x from "../assets/icons/x.svg";
-import discord from "../assets/icons/discord.svg";
-import linkedin from "../assets/icons/linkedin.svg";
-import facebook from "../assets/icons/facebook.svg";
-import twitch from "../assets/icons/twitch.svg";
 ---
 
 <nav
@@ -19,9 +11,9 @@ import twitch from "../assets/icons/twitch.svg";
       <!-- Logo -->
       <a href="/" class="flex items-center space-x-2">
         <!-- <img src="/logo.svg" alt="Trinity Design Lab" class="h-8" /> -->
-        <img src=`${logo_white.src}` id="logo_white" class="w-[171px]" alt="" />
+        <img src={getImage("logo_white")} id="logo_white" class="w-[171px]" alt="" />
         <img
-          src=`${logo_coloured.src}`
+          src={getImage("logo_coloured")}
           id="logo_coloured"
           class="hidden w-[171px]"
           alt=""
@@ -71,7 +63,7 @@ import twitch from "../assets/icons/twitch.svg";
 >
   <div class="mb-0 flex w-full justify-between px-5 pt-[30px]">
     <img
-      src=`${logo_full_coloured.src}`
+      src={getImage("logo_full_coloured")}
       id="logo_full_coloured"
       class="w-[171px]"
       alt=""
@@ -107,11 +99,11 @@ import twitch from "../assets/icons/twitch.svg";
     </div>
     <hr class="w-full border-t border-white/20" />
     <div class="flex w-full justify-center gap-10 py-5">
-      <a href="#"><img src=`${x.src}` alt="social media icon" /></a>
-      <a href="#"><img src=`${discord.src}` alt="social media icon" /></a>
-      <a href="#"><img src=`${linkedin.src}` alt="social media icon" /></a>
-      <a href="#"><img src=`${facebook.src}` alt="social media icon" /></a>
-      <a href="#"><img src=`${twitch.src}` alt="social media icon" /></a>
+      <a href="#"><img src={getImage("x")} alt="social media icon" /></a>
+      <a href="#"><img src={getImage("discord")} alt="social media icon" /></a>
+      <a href="#"><img src={getImage("linkedin")} alt="social media icon" /></a>
+      <a href="#"><img src={getImage("facebook")} alt="social media icon" /></a>
+      <a href="#"><img src={getImage("twitch")} alt="social media icon" /></a>
     </div>
     <hr class="w-full border-t border-white/20" />
     <div class="w-full py-8">
@@ -123,7 +115,7 @@ import twitch from "../assets/icons/twitch.svg";
       </div>
     </div>
     <div class="flex justify-center">
-      <img src=`${trinity.src}` alt="trinity logo text" />
+      <img src={getImage("trinity")} alt="trinity logo text" />
     </div>
   </div>
 </div>

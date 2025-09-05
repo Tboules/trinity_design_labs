@@ -2,12 +2,22 @@
 import NeatBackground from "../components/NeatBackground";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import arrowBlackIcon from "../assets/icons/Arrow_black.svg";
-import arrowWhiteIcon from "../assets/icons/Arrow_white.svg";
-import card1 from "../assets/card_images/card_one.jpg";
-import card2 from "../assets/card_images/card_two.jpg";
-import card3 from "../assets/card_images/card_three.jpg";
-import card4 from "../assets/card_images/card_four.jpg";
+import getImage from "../utils/cloudinary";
+import ContactUs from "../components/ContactUs.astro";
+
+const techList = [
+  { name: "Figma", src: getImage("figma") },
+  { name: "Photoshop", src: getImage("photoshop") },
+  { name: "Angular", src: getImage("angular") },
+  { name: "React", src: getImage("react") },
+  { name: "Next js", src: getImage("nextjs") },
+  { name: "Tailwind", src: getImage("tailwind") },
+  { name: "C++", src: getImage("cplus") },
+  { name: "Node.js", src: getImage("nodejs") },
+  { name: "Android", src: getImage("android") },
+  { name: "Python", src: getImage("python") },
+  { name: "PHP", src: getImage("php") },
+];
 
 const allOurWork = await getCollection("our_work");
 ---
@@ -26,7 +36,7 @@ const allOurWork = await getCollection("our_work");
     </div>
 
     <!-- Content -->
-    <div class="relative z-10 px-6">
+    <div class="relative z-10 px-6 pt-">
       <h1
         class="mt-[155px] mb-[70px] text-[43px] leading-[100%] font-medium lg:mt-0 lg:mb-0 lg:text-[83px] lg:leading-20"
       >
@@ -79,7 +89,7 @@ const allOurWork = await getCollection("our_work");
         <li id="card-1" class="sticky top-28 mb-3 h-[500px]">
           <div
             class="card-content relative h-full rounded-[45px] bg-cover bg-center bg-no-repeat p-13 text-white"
-            style={`background-image: url(${card1.src});`}
+            style={`background-image: url(${getImage("card1")});`}
           >
             <div
               class="overlay absolute inset-0 z-0 rounded-[45px] bg-black/40"
@@ -99,7 +109,7 @@ const allOurWork = await getCollection("our_work");
                 <div
                   class="flex h-10 w-10 items-center justify-center rounded-full bg-white"
                 >
-                  <img src=`${arrowBlackIcon.src}` alt="" />
+                  <img src={getImage("arrowBlackIcon")} alt="" />
                 </div>
                 <div class="">Explore Our Services</div>
               </a>
@@ -111,7 +121,7 @@ const allOurWork = await getCollection("our_work");
         <li id="card-2" class="sticky top-28 mb-3 h-[500px]">
           <div
             class="card-content relative h-full rounded-[45px] border-[1px] border-[#000000] bg-cover bg-center bg-no-repeat p-13 text-[#131212] transition-all duration-700"
-            style={`background-image: url(${card2.src});`}
+            style={`background-image: url(${getImage("card2")});`}
           >
             <div class="overlay absolute inset-0 z-0 rounded-[45px] bg-white">
             </div>
@@ -129,7 +139,7 @@ const allOurWork = await getCollection("our_work");
                 <div
                   class="arrow-wrapper flex h-10 w-10 items-center justify-center rounded-full bg-black"
                 >
-                  <img src=`${arrowWhiteIcon.src}` alt="" />
+                  <img src={getImage("arrowBlackIcon")} alt="" />
                 </div>
                 <div class="">Explore Our Services</div>
               </a>
@@ -141,7 +151,7 @@ const allOurWork = await getCollection("our_work");
         <li id="card-3" class="sticky top-28 mb-3 h-[500px]">
           <div
             class="card-content relative h-full rounded-[45px] border-[1px] border-[#000000] bg-cover bg-center bg-no-repeat p-13 text-[#131212] transition-all duration-700"
-            style={`background-image: url(${card3.src});`}
+            style={`background-image: url(${getImage("card3")});`}
           >
             <div class="overlay absolute inset-0 rounded-[45px] bg-white"></div>
             <div class="relative z-10">
@@ -158,7 +168,7 @@ const allOurWork = await getCollection("our_work");
                 <div
                   class="arrow-wrapper flex h-10 w-10 items-center justify-center rounded-full bg-black"
                 >
-                  <img src=`${arrowWhiteIcon.src}` alt="" />
+                  <img src={getImage("arrowBlackIcon")} alt="" />
                 </div>
                 <div class="">Explore Our Services</div>
               </a>
@@ -170,7 +180,7 @@ const allOurWork = await getCollection("our_work");
         <li id="card-4" class="sticky top-28 mb-3 h-[500px]">
           <div
             class="card-content relative h-full rounded-[45px] border-[1px] border-[#000000] bg-cover bg-center bg-no-repeat p-13 text-[#131212] transition-all duration-700"
-            style={`background-image: url(${card4.src});`}
+            style={`background-image: url(${getImage("card4")});`}
           >
             <div class="overlay absolute inset-0 rounded-[45px] bg-white"></div>
             <div class="relative z-10">
@@ -187,7 +197,7 @@ const allOurWork = await getCollection("our_work");
                 <div
                   class="arrow-wrapper flex h-10 w-10 items-center justify-center rounded-full bg-black"
                 >
-                  <img src=`${arrowWhiteIcon.src}` alt="" />
+                  <img src={getImage("arrowBlackIcon")} alt="" />
                 </div>
                 <div class="">Explore Our Services</div>
               </a>
@@ -197,60 +207,64 @@ const allOurWork = await getCollection("our_work");
       </ul>
     </div>
   </section>
-  <section>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+  <!-- <section
+    class="relative items-center justify-center overflow-hidden pt-[100px] text-center lg:pb-0 rounded-t-[60px]"
+  >
+    <NeatBackground client:only="react" />
+    <div class="relative z-10 container mx-auto">
+      <p class="text-6xl uppercase text-white mb-[60px] font-medium">Our Work</p>
+      <div class="grid grid-cols-1 gap-10 px-5 sm:grid-cols-2 lg:grid-cols-3 lg:px-0">
+        {
+          allOurWork.map((work) => (
+            <a href={`/our-work/${work.data.slug}`}>
+              <div class="overflow-hidden rounded-[30px]">
+                <img
+                  src={work.data.hero.image}
+                  alt={work.data.hero.title}
+                  class="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+              <p class="mt-5 text-2xl font-medium text-white">
+                {work.data.hero.title}
+              </p>
+              <p class="mt-2.5 text-lg text-white">{work.data.hero.sub_title}</p>
+            </a>
+          ))
+        }
+    </div>
+  </section> -->
+  <section class="bg-white">
+    <div class="container mx-auto px-5 pt-[50px] sm:px-0 sm:pt-[120px]">
+      <p
+        class="mb-5 text-center text-[40px] leading-[50px] font-medium text-black uppercase sm:text-4xl lg:text-6xl"
+      >
+        Technology We Use
+      </p>
+      <p
+        class="mx-auto max-w-[814px] text-center text-[18px] leading-[28px] text-[#101010]"
+      >
+        Leveraging Cutting-Edge Technologies We utilize the latest technologies
+        to deliver the best possible solutions. Our expertise spans across
+        various platforms and programming languages, ensuring that we can meet
+        your specific needs with the most suitable tools.
+      </p>
+      <div
+        class="flex flex-wrap justify-center gap-x-[36px] gap-y-[30px] px-2.5 pt-[60px] lg:gap-x-[113px] lg:gap-y-[50px] lg:px-0 lg:pt-[100px]"
+      >
+        {
+          techList.map((tech) => (
+            <div class="flex flex-col items-center">
+              <div class="mb-[15px] flex h-[80px] w-[80px] items-center justify-center rounded-[20px] shadow-[0px_3px_0px_0px_#57C5C8] lg:mb-5 lg:h-[100px] lg:w-[100px]">
+                <img src={tech.src} alt={tech.name} />
+              </div>
+              <p class="leading-7 font-medium text-[#101010]">{tech.name}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
   </section>
+  <ContactUs id="contact" />
 
   <script>
     const cards = document.querySelectorAll("#cards li");
@@ -266,8 +280,8 @@ const allOurWork = await getCollection("our_work");
         });
       },
       {
-        threshold: 1, // fully visible in viewport
-        rootMargin: "-112px 0px 0px 0px", // adjust for sticky offset (top-28 = 112px)
+        threshold: 1,
+        rootMargin: "-112px 0px 0px 0px",
       },
     );
 

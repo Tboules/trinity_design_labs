@@ -1,3 +1,81 @@
-<!-- <footer>
-    footer
-</footer> -->
+---
+import getImage from "../utils/cloudinary";
+---
+
+<footer class="rounded-t-[30px] bg-black text-white lg:rounded-t-[60px]">
+  <div class="container mx-auto">
+    <div
+      class="flex flex-col items-center lg:gap-[50px] gap-[30px] px-[20px] py-[50px] md:flex-row xl:gap-[155px] xl:px-[100px] xl:py-[100px]"
+    >
+      <p
+        class="text-[24px] leading-[30px] md:text-start text-center font-medium lg:text-[40px] lg:leading-[50px]"
+      >
+        Subscribe to our Newsletter
+      </p>
+      <div
+        class="flex w-full max-w-[493px] justify-between gap-2.5 rounded-[10px] bg-white py-1.5 pr-1.5 pl-5"
+      >
+        <input
+          type="email"
+          placeholder="Email Address"
+          class="focus:out w-[50%] flex-1 text-[#8B8B8B] placeholder-[#8B8B8B] focus:outline-none sm:w-auto"
+        />
+        <button
+          class="rounded-tr-[12px] rounded-br-[12px] bg-black px-[30px] py-2 text-[16px] leading-[28px] font-medium text-white md:px-10 md:py-2.5"
+          >Subscribe</button
+        >
+      </div>
+    </div>
+  </div>
+  <hr class="w-full border-t border-white/20" />
+  <div class="container mx-auto">
+    <div
+      class="flex flex-col items-center justify-between gap-y-10 px-5 py-[30px] md:py-[60px] lg:flex-row lg:gap-y-0"
+    >
+      <div class="flex items-center gap-[155px] lg:p-2.5">
+        <div
+          class="flex w-full flex-wrap items-center justify-center gap-x-[30px] gap-y-5 lg:gap-[60px]"
+        >
+          <a href="#what" class="uppercase hover:text-gray-300"
+            >Book a Consultation</a
+          >
+          <a href="#what" class="uppercase hover:text-gray-300">What We Do</a>
+          <a href="#process" class="uppercase hover:text-gray-300"
+            >Our Process</a
+          >
+          <a href="#case" class="uppercase hover:text-gray-300">Case Studies</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-[155px]">
+        <div class="flex w-full justify-center gap-10">
+          <a href="#"><img src={getImage("x")} alt="social media icon" /></a>
+          <a href="#"><img src={getImage("discord")} alt="social media icon" /></a>
+          <a href="#"><img src={getImage("linkedin")} alt="social media icon" /></a>
+          <a href="#"><img src={getImage("facebook")} alt="social media icon" /></a>
+          <a href="#"><img src={getImage("twitch")} alt="social media icon" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="w-full border-t border-white/20" />
+  <div
+    class="flex w-full flex-wrap items-center justify-center pt-8 pb-[50px] text-[12px] leading-[20px] text-[#8B8B8B] sm:space-x-4 sm:text-[14px] sm:leading-[28px] md:pb-[87px]"
+  >
+    <p class="mb-0 text-center sm:text-start">
+      © 2025 Trinity Design Lab All rights reserved
+    </p>
+    <span class="hidden sm:block">•</span>
+    <div class="flex items-center justify-center space-x-4">
+      <a href="#" class="hover:underline">Terms of Use</a>
+      <span>•</span>
+      <a href="#" class="hover:underline">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="flex justify-center">
+    <img
+      src={getImage("trinityBig")}
+      class="w-[82%] max-w-[1100px]"
+      alt="trinity logo text"
+    />
+  </div>
+</footer>
