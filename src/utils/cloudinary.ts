@@ -15,7 +15,7 @@ const IMAGES = {
   arrowWhiteIcon: "https://res.cloudinary.com/dojwooqzh/image/upload/v1757073804/trinity_design_labs/icons/Arrow_white_whsrso.svg",
   figma: "https://res.cloudinary.com/dojwooqzh/image/upload/v1757073841/trinity_design_labs/icons/tech/figma_qvp2we.svg",
   photoshop: "https://res.cloudinary.com/dojwooqzh/image/upload/v1757073845/trinity_design_labs/icons/tech/photoshop_rr0hmw.svg",
-  angular: "https://res.cloudinary.com/dojwooqzh/image/upload/v1757073845/trinity_design_labs/icons/tech/photoshop_rr0hmw.svg",
+  angular: "https://res.cloudinary.com/dojwooqzh/image/upload/v1757073839/trinity_design_labs/icons/tech/angular_uaiahp.svg",
   react: "https://res.cloudinary.com/dojwooqzh/image/upload/v1757073848/trinity_design_labs/icons/tech/react_iwykyr.svg",
   nextjs: "https://res.cloudinary.com/dojwooqzh/image/upload/v1757073842/trinity_design_labs/icons/tech/nextjs_hvuqjo.svg",
   tailwind: "https://res.cloudinary.com/dojwooqzh/image/upload/v1757073849/trinity_design_labs/icons/tech/tailwind_mute7g.svg",

@@ -1,0 +1,117 @@
+{
+  "slug": "dental-care",
+  "hero": {
+    "title": "Revolutionizing Dental Care with Smart App Solutions",
+    "sub_title": "A seamless mobile experience for patients and doctors",
+    "card_title": "Dentalcare App - Appointment Booking",
+    "card_description": "Dental app offers a seamless way for patients to book appointments, access records, and communicate with their dentist—all from their smartphone. It simplifies treatment management with personalized care plans and automated reminders. For clinics, it streamlines operations with scheduling, billing, and patient tracking tools. Whether you're a patient or a provider, this app makes dental care easier, faster, and more efficient.",
+    "image": "https://res.cloudinary.com/dojwooqzh/image/upload/v1757668348/trinity_design_labs/our-work/dental-care/21ef213bf2bc07e356a0d7218634affae8d11389_b4o1vb.avif"
+  },
+  "tags": {
+    "industry": ["HealthCare"],
+    "services": ["UI/UX", "Mobile App"],
+    "technology": ["ASP.NET", "C#", "Kotlin"],
+    "category": ["Mobile"]
+  },
+  "projectBrief": "Dental app offers a seamless way for patients to book appointments, access records, and communicate with their dentist—all from their smartphone. It simplifies treatment management with personalized care plans and automated reminders. For clinics, it streamlines operations with scheduling, billing, and patient tracking tools. Whether you're a patient or a provider, this app makes dental care easier, faster, and more efficient.",
+  "keyChallenges": "Designing a dental health mobile app presented a unique set of challenges that blended healthcare, education, and user experience. The primary goal was to create an engaging and accessible tool that promotes better oral hygiene habits across diverse user groups. We faced hurdles in maintaining long-term user engagement, delivering educational content without overwhelming users, and ensuring inclusivity for all age groups and abilities.",
+  "sectionOne": {
+    "cardOne": {
+      "type": "details",
+      "heading": "User Engagement & Retention",
+      "items": [
+        {
+          "description": "Many users download health apps with good intentions but abandon them quickly."
+        },
+        {
+          "description": "One of our core challenges was designing features that promote daily interaction, encourage habit formation, and provide immediate value whether through reminders, tips, or health tracking so users remained engaged long-term."
+        }
+      ]
+    },
+    "cardTwo": {
+      "type": "image",
+      "image": "https://res.cloudinary.com/dojwooqzh/image/upload/v1757681366/trinity_design_labs/our-work/dental-care/c3b621bd2d17fdb6a74c41223137a8e204a52f0c_1_t741dc.avif"
+    },
+    "cardThree": {
+      "type": "image",
+      "image": "https://res.cloudinary.com/dojwooqzh/image/upload/v1757681366/trinity_design_labs/our-work/dental-care/c3b621bd2d17fdb6a74c41223137a8e204a52f0c_1_t741dc.avif"
+    },
+    "cardFour": {
+      "type": "details",
+      "heading": "Designing for All Age Groups",
+      "items": [
+        {
+          "description": "Dental care is important at every age, which meant our app needed to cater to both children and adults."
+        },
+        {
+          "description": "Created a UI that was friendly and engaging for kids while maintaining a clean, professional feel for adult users."
+        },
+        {
+          "description": "Balancing playfulness with utility was a constant design consideration."
+        }
+      ],
+      "images": ["/images/our-work/dental-care/age-groups.png"]
+    },
+    "cardFive": {
+      "type": "details",
+      "heading": "Visualizing Dental Health Progress",
+      "items": [
+        {
+          "description": "Most users can’t easily perceive the benefits of good dental habits over time."
+        },
+        {
+          "description": "We introduced visual dashboards, progress trackers, and interactive feedback systems that made improvements feel tangible and rewarding."
+        }
+      ],
+      "images": ["/images/our-work/dental-care/progress.png"]
+    }
+  },
+  "sectionTwo": [
+    {
+      "heading": "The Solution",
+      "paragraph": "To tackle the challenge of delivering a seamless and efficient experience for both patients and doctors in the DentalCare app project, we developed two separate applications—each tailored to the unique needs of its user group. This approach allowed us to design role-specific features and functionalities, ensuring relevance and ease of use. Here's how we brought this concept to life.",
+      "items": [
+        {
+          "title": "UI/UX Design",
+          "description": "Our design approach focused on simplicity and clarity, ensuring both patients and doctors could navigate the app effortlessly and access essential information with ease. We integrated clean, modern visuals and intuitive navigation to boost usability and user engagement. Additionally, a responsive design was implemented to ensure seamless functionality across a wide range of devices."
+        },
+        {
+          "title": "Mobile App for Doctors",
+          "description": "We developed a user-friendly mobile application tailored specifically for dentists, focusing on functionality and ease of use. Key features include a centralized dashboard for quick access to vital information, an integrated calendar for efficient appointment management, a patient database for streamlined record-keeping, a dedicated section for treatment plans, and a statistics view to monitor and track practice performance"
+        },
+        {
+          "title": "Mobile App for Patients",
+          "description": "To enhance accessibility to dental care, we developed a user-friendly mobile app specifically for patients, making it easier to manage appointments and stay informed about their oral health. The app features a clean dashboard, an integrated calendar, and a convenient 'Add Appointment' function to simplify scheduling and improve patient engagement."
+        },
+        {
+          "title": "Ongoing Support and Maintenance",
+          "description": "Our dedicated team actively monitors the app for issues or bugs and resolves them promptly to maintain a seamless user experience. We also release regular updates, introducing new features and improvements based on user feedback to ensure the app remains relevant, efficient, and user-focused."
+        }
+      ]
+    }
+  ],
+  "sectionThree": [
+    {
+      "heading": "The Impact",
+      "description": "From streamlined appointment scheduling to improved patient-doctor communication, the impact of the DentalCare app goes far beyond convenience. It enhances the overall dental care experience for both patients and professionals. Here are some of the key benefits our solution delivers",
+      "items": [
+        {
+          "percentage": "85%",
+          "title": "Streamlined patient management"
+        },
+        {
+          "percentage": "72%",
+          "title": "Enhanced appointment management"
+        },
+        {
+          "percentage": "54%",
+          "title": "Improved financial insights visibility"
+        }
+      ],
+      "images": [
+        "/images/our-work/dental-care/impact-1.png",
+        "/images/our-work/dental-care/impact-2.png"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+---
+import { getCollection } from "astro:content";
+import ContactUs from "../../components/ContactUs.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const limit = 90;
+const projects = await getCollection("our_work");
+const categories = [
+  ...new Set(
+    projects.flatMap((p) =>
+      p.data.tags?.category ? p.data.tags.category : [],
+    ),
+  ),
+];
+---
+
+<Layout title="Our Work">
+  <section class="bg-white pt-40 pb-24 lg:py-56">
+    <div class="container mx-auto text-center">
+      <div class="mx-auto max-w-3xl px-4">
+        <h1
+          class="mx-auto mb-5 max-w-[367px] text-[43px] leading-[120%] font-bold lg:max-w-[689px] lg:text-[83px] lg:leading-[80px]"
+        >
+          Work That Speaks for Itself
+        </h1>
+        <p
+          class="mx-auto max-w-[293px] text-sm leading-6 text-black sm:max-w-[400px] lg:max-w-[100%] lg:text-lg lg:leading-normal"
+        >
+          Explore a curated selection of real-world projects—each solving
+          problems, creating impact, and pushing boundaries through thoughtful
+          design and execution.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="container mx-auto px-5 sm:px-0">
+    <div class="-mt-[45px] flex justify-center">
+      <div
+        id="filters"
+        class="filters flex w-fit flex-wrap items-center justify-center gap-2.5 rounded-[18px] bg-[#F4F4F4] p-5 sm:gap-5"
+      >
+        <button
+          data-filter="All"
+          class="transition-duration-300 cursor-pointer rounded-xl border bg-black px-[25px] py-2.5 font-medium text-white transition-all hover:bg-black hover:text-white sm:px-11 sm:py-3"
+          >All</button
+        >
+        {
+          categories.map((category) => (
+            <button
+              class="transition-duration-300 cursor-pointer rounded-xl border px-[25px] py-2.5 font-medium transition-all hover:bg-black hover:text-white sm:px-11 sm:py-3"
+              data-filter={category}
+            >
+              {category}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+    <div class="pt-[20px] pb-[100px] sm:pt-[100px] sm:pb-[200px]">
+      <div class="grid grid-cols-1 gap-[30px] lg:grid-cols-2 lg:gap-10">
+        {
+          projects.map((project) => {
+            const description = project.data.hero.card_description;
+            const isLong = description.length > limit;
+            const shortText = description.slice(0, limit);
+            return (
+              <div>
+                <div class="group rounded-[20px] border border-[#8B8B8B] bg-white p-[15px] shadow-[0px_0px_0px_0px_#00000033] transition-shadow duration-300 ease-in-out hover:shadow-[0px_10px_0px_0px_#00000033] sm:rounded-[40px] sm:p-5">
+                  <a href={`/our-work/${project.data.slug}`}>
+                    <div class="mb-5 aspect-[560/290] w-full overflow-hidden rounded-[10px] sm:rounded-3xl">
+                      <img
+                        src={project.data.hero.image}
+                        alt={project.data.hero.title}
+                        class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  </a>
+
+                  <div class="mt-5 mb-[5px] px-2.5 sm:mb-2.5">
+                    <a href={`/our-work/${project.data.slug}`}>
+                      <h3 class="text-xl font-bold sm:text-2xl">
+                        {project.data.hero.card_title}
+                      </h3>
+                    </a>
+                    <p
+                      class="mt-2.5 text-lg text-[16px] leading-5 text-[#8B8B8B] sm:text-lg sm:leading-6"
+                      data-full={description}
+                      data-short={shortText}
+                    >
+                      {isLong ? shortText + "..." : description}
+                      {isLong ? (
+                        <span
+                          class="ml-1 cursor-pointer text-[16px] font-bold text-transparent"
+                          style="background: linear-gradient(105.36deg, #70CCCF 0%, #8DB73E 50.03%, #4C9D31 100.06%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
+                          onclick="
+    const p = this.parentElement;
+    const full = p.getAttribute('data-full');
+    const short = p.getAttribute('data-short');
+    if (this.innerText === 'Read More') {
+      p.innerText = full + ' ';
+      p.appendChild(this);
+      this.innerText = 'Read Less';
+    } else {
+      p.innerText = short + '... ';
+      p.appendChild(this);
+      this.innerText = 'Read More';
+    }
+  "
+                        >
+                          Read More
+                        </span>
+                      ) : null}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+  <ContactUs id="contact" />
+
+  <script>
+    const buttons = document.querySelectorAll("#filters button");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // remove active class from all
+        buttons.forEach((b) =>
+          b.classList.remove("active", "bg-black", "text-white"),
+        );
+
+        // add active class to clicked
+        btn.classList.add("active", "bg-black", "text-white");
+      });
+    });
+  </script>
+</Layout>

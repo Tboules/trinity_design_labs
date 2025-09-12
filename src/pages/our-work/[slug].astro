@@ -14,8 +14,161 @@ const { content } = Astro.props;
 ---
 
 <Layout>
-  <img src={content.hero.image} />
+  <section class="bg-white">
+    <div class="container mx-auto px-5 pt-[130px] pb-[200px]">
+      <div
+        class="mb-20 flex items-center space-x-2 text-[16px] leading-[18px] text-[#8B8B8B]"
+      >
+        <!-- Back arrow -->
+        <a href="#" onclick="history.back(); return false;" class="mr-[15px]">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M9.57 5.92999L3.5 12L9.57 18.07"
+              stroke="#292D32"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M20.4999 12H3.66992"
+              stroke="#292D32"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </a>
 
-  <h1>{content.hero.title}</h1>
-  <p>{content.hero.sub_title}</p>
+        <!-- Breadcrumb text -->
+        <a href="/" class="hover:underline">Home</a>
+        <span>/</span>
+        <a href="/our-work" class="hover:underline">Our Work</a>
+        <span>/</span>
+        <span class="font-medium text-black">{content.hero.card_title}</span>
+      </div>
+      <h1 class="mb-[50px] text-center text-[83px] leading-20 font-bold">
+        {content.hero.title}
+      </h1>
+      <div class="flex items-center justify-between px-[70px]">
+        {
+          Object.entries(content.tags ?? {})
+            .filter(([key]) => key !== "category") // exclude category
+            .map(([key, values]) => (
+              <div class="flex flex-col items-center">
+                <div class="flex flex-wrap gap-2">
+                  {(Array.isArray(values) ? values : []).map(
+                    (value: string) => (
+                      <span class="rounded-full border border-[#8B8B8B] px-[15px] py-[2px] text-[16px] leading-[28px] font-medium whitespace-nowrap">
+                        {value}
+                      </span>
+                    ),
+                  )}
+                </div>
+                <span class="mt-2.5 text-sm text-gray-400">
+                  {key.charAt(0).toUpperCase() + key.slice(1)}
+                </span>
+              </div>
+            ))
+        }
+      </div>
+    </div>
+  </section>
+  <section class="text-black">
+    <div class="container mx-auto px-5 pb-[200px]">
+      <div
+        class="-mt-[100px] mb-[200px] w-full overflow-hidden rounded-[10px] sm:rounded-3xl lg:rounded-[90px]"
+      >
+        <img
+          src={content.hero.image}
+          alt={content.hero.title}
+          class="h-full w-full"
+        />
+      </div>
+      <div class="mb-[100px]">
+        <h2 class="mb-5 text-6xl font-medium uppercase">Project Brief</h2>
+        <p class="text-lg">{content.projectBrief}</p>
+      </div>
+      <div class="mb-[60px]">
+        <h2 class="mb-5 text-6xl font-medium uppercase">Key Challenges</h2>
+        <p class="text-lg">{content.keyChallenges}</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-10 lg:grid-cols-3">
+        {
+          content.sectionOne?.cardOne && (
+            <div class="col-span-2 rounded-[40px] bg-white p-[50px]">
+              <h3 class="mb-5 text-[34px] leading-[50px] font-bold">
+                {content.sectionOne?.cardOne.heading}
+              </h3>
+              <ul class="list-disc pl-5 text-lg">
+                {content.sectionOne?.cardOne.items?.map((item) => (
+                  <li>{item.description}</li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+        {
+          content.sectionOne?.cardTwo && (
+            <div class="col-span-1 rounded-[20px] overflow-hidden">
+              <div class="mb-5 h-full w-full">
+                <img
+                  src={content.sectionOne?.cardTwo?.image}
+                  alt="demo image"
+                  class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            </div>
+          )
+        }
+        {
+          content.sectionOne?.cardThree && (
+            <div class="col-span-1 rounded-[20px] overflow-hidden">
+              <div class="mb-5 h-full w-full">
+                <img
+                  src={content.sectionOne?.cardThree?.image}
+                  alt="demo image"
+                  class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            </div>
+          )
+        }
+        {
+          content.sectionOne?.cardFour && (
+            <div class="col-span-1 rounded-[40px] bg-white p-[50px]">
+              <h3 class="mb-5 text-[34px] leading-[50px] font-bold">
+                {content.sectionOne?.cardFour.heading}
+              </h3>
+              <ul class="list-disc pl-5 text-lg">
+                {content.sectionOne?.cardFour.items?.map((item) => (
+                  <li>{item.description}</li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+        {
+          content.sectionOne?.cardFive && (
+            <div class="col-span-1 rounded-[40px] bg-white p-[50px]">
+              <h3 class="mb-5 text-[34px] leading-[50px] font-bold">
+                {content.sectionOne?.cardFive.heading}
+              </h3>
+              <ul class="list-disc pl-5 text-lg">
+                {content.sectionOne?.cardFive.items?.map((item) => (
+                  <li>{item.description}</li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </section>
 </Layout>
